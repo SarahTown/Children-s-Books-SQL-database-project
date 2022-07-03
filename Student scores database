@@ -1,0 +1,157 @@
+CREATE TABLE student_grades(
+name TEXT,
+score INTEGER,
+class INTEGER);
+
+INSERT INTO student_grades(
+name, score)
+VALUES('John', 78, 1);
+
+INSERT INTO student_grades(
+name, score)
+VALUES('Debbie', 85, 2);
+
+INSERT INTO student_grades(
+name, score)
+VALUES('George', 92, 3);
+
+INSERT INTO student_grades(
+name, score)
+VALUES('Summer', 100, 4);
+
+INSERT INTO student_grades(
+name, score)
+VALUES('Jeanie', 62, 1);
+
+INSERT INTO student_grades(
+name, score)
+VALUES('Roger', 93, 2);
+
+INSERT INTO student_grades(
+name, score)
+VALUES('Heather', 70, 3);
+
+INSERT INTO student_grades(
+name, score)
+VALUES('Yessica', 79, 4);
+
+INSERT INTO student_grades(
+name, score)
+VALUES('Garrett', 99, 1);
+
+INSERT INTO student_grades(
+name, score)
+VALUES('Lane', 76, 2);
+
+INSERT INTO student_grades(
+name, score)
+VALUES('Peter', 95, 3);
+
+INSERT INTO student_grades(
+name, score)
+VALUES('Toni', 91, 4);
+
+INSERT INTO student_grades(
+name, score)
+VALUES('Scarlett', 84, 1);
+
+INSERT INTO student_grades(
+name, score)
+VALUES('Yohan', 92, 2);
+
+INSERT INTO student_grades(
+name, score)
+VALUES('Jesus' 76, 3);
+
+INSERT INTO student_grades(
+name, score)
+VALUES('Delphina', 62, 4);
+
+INSERT INTO student_grades(
+name, score)
+VALUES('Katerina', 78, 1);
+
+INSERT INTO student_grades(
+name, score)
+VALUES('Al', 84, 2);
+
+INSERT INTO student_grades(
+name, score)
+VALUES('Mari', 90, 3);
+
+INSERT INTO student_grades(
+name, score)
+VALUES('Cole', 89, 4);
+
+INSERT INTO student_grades(
+name, score)
+VALUES('Lucas', 62, 1);
+
+INSERT INTO student_grades(
+name, score)
+VALUES('Leyla', 79, 2);
+
+INSERT INTO student_grades(
+name, score)
+VALUES('Aldo', 98, 3);
+
+INSERT INTO student_grades(
+name, score)
+VALUES('Omari', 98, 4);
+
+INSERT INTO student_grades(
+name, score)
+VALUES('Kira', 87, 1);
+
+INSERT INTO student_grades(
+name, score)
+VALUES('Timothee', 99, 2);
+
+INSERT INTO student_grades(
+name, score)
+VALUES('Bianka', 83, 3);
+
+INSERT INTO student_grades(
+name, score)
+VALUES('Phoebe', 76, 4);
+
+
+#Pull grades from class 3
+SELECT * FROM student_grades
+WHERE class = 3;
+
+#calculate class averages for each class and place in table titled class averages
+CREATE TABLE class_averages(
+class INTEGER
+average INTEGER);
+
+INSERT INTO class_averages(class, average)
+(1, (AVG(grade)
+FROM student_grades
+WHERE class = 1));
+
+INSERT INTO class_averages(class, average)
+(2, (AVG(grade)
+FROM student_grades
+WHERE class = 2));
+
+INSERT INTO class_averages(class, average)
+(3, (AVG(grade)
+FROM student_grades
+WHERE class = 3));
+
+INSERT INTO class_averages(class, average)
+(4, (AVG(grade)
+FROM student_grades
+WHERE class = 4));
+
+#Organize grades highest to lowest
+SELECT * FROM student_grades
+ORDER BY grades DESC;
+
+#Show top grade for each class
+
+#Show all grades above 70
+
+SELECT * FROM student_grades
+WHERE grade > 70;
