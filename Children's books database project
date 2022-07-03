@@ -1,0 +1,187 @@
+CREATE TABLE childrens_books (
+title TEXT,
+author TEXT,
+year_published INTEGER,
+);
+
+INSERT INTO childrens_books (
+title, author, year_published)
+VALUES ('Two Little Witches', 'Harriet Ziefert', 1996);
+
+INSERT INTO childrens_books (
+title, author, year_published)
+VALUES ('Spooky Hour', 'Tony Mitton', 2004);
+
+INSERT INTO childrens_books (
+title, author, year_published)
+VALUES ('Ten Timid Ghosts', 'Jennifer O'Connell', 2000);
+
+INSERT INTO childrens_books (
+title, author, year_published)
+VALUES ('Creepy Carrots', 'Aaron Reynolds', 2012);
+
+INSERT INTO childrens_books (
+title, author, year_published)
+VALUES ('Nightsong', 'Ari Berk', 2012);
+
+INSERT INTO childrens_books (
+title, author, year_published)
+VALUES ('Santiago Stays', 'Angela Dominguez', 2013);
+
+INSERT INTO childrens_books (
+title, author, year_published)
+VALUES ('Penguinaut', 'Marcie Colleen", 2018);
+
+INSERT INTO childrens_books (
+title, author, year_published)
+VALUES ('Night Cat', 'Margaret Beames', 2003);
+
+INSERT INTO childrens_books (
+title, author, year_published)
+VALUES ('Beast feast', 'Emma Yarlett', 2019);
+
+INSERT INTO childrens_books (
+title, author, year_published)
+VALUES ('Oliver', 'Birgitta Sif', 2012);
+
+INSERT INTO childrens_books (
+title, author, year_published)
+VALUES ('The Day you Begin', 'Jacqueline Woodson', 2018);
+
+INSERT INTO childrens_books (
+title, author, year_published)
+VALUES ('Woolbur', 'Harper Leslie', 2008);
+
+INSERT INTO childrens_books (
+title, author, year_published)
+VALUES ('Llama Llama Time to Share', 'Anna Dewdney', 2012);
+
+INSERT INTO childrens_books (
+title, author, year_published)
+VALUES ('What do you do with a problem?', 'Mae Besom', 2016);
+
+INSERT INTO childrens_books (
+title, author, year_published)
+VALUES ('Library Lion', 'Michelle Knudson', 2006);
+
+INSERT INTO childrens_books (
+title, author, year_published)
+VALUES ('Not Quite Narwhal', 'Jessie Sima', 2017);
+
+INSERT INTO childrens_books (
+title, author, year_published)
+VALUES ('Madeline Finn and the Library Dog', 'Lisa Papp', 2016);
+
+INSERT INTO childrens_books (
+title, author, year_published)
+VALUES ('The Wonderful things you will be', 'Emily Winfield Martin', 2015);
+
+INSERT INTO childrens_books (
+title, author, year_published)
+VALUES ('No Matter What', 'Debi Gilroi', 1999);
+
+INSERT INTO childrens_books (
+title, author, year_published)
+VALUES ('I need a friend', 'Sherry Kafka', 1971);
+
+INSERT INTO childrens_books (
+title, author, year_published)
+VALUES ('The Teeny Tiny Ghost', 'Kay Winters', 1997);
+
+INSERT INTO childrens_books (
+title, author, year_published)
+VALUES ('A bike like Sergio', 'Maribeth Boelts', 2016);
+
+INSERT INTO childrens_books (
+title, author, year_published)
+VALUES ('Otis', 'Loren Long', 2009);
+
+INSERT INTO childrens_books (
+title, author, year_published)
+VALUES ('Yoko', 'Rosemary Wells', 1998);
+
+INSERT INTO childrens_books (
+title, author, year_published)
+VALUES ('Sadako's Cranes', 'Judith Loske', 2011);
+
+INSERT INTO childrens_books (
+title, author, year_published)
+VALUES ('Tomas and the Library Lady', 'Pat Mora', 1997);
+
+INSERT INTO childrens_books (
+title, author, year_published)
+VALUES ('Last stop on market street', 'Matt de la Pena', 2015);
+
+INSERT INTO childrens_books (
+title, author, year_published)
+VALUES ('Explore and Learn: Earth and Space', 'Belinda Gallagher', 2000);
+
+INSERT INTO childrens_books (
+title, author, year_published)
+VALUES ('Why does it rain?', 'James Buckley', 1983);
+
+INSERT INTO childrens_books (
+title, author, year_published)
+VALUES ('1000 Facts about the Earth', 'Moira Butterfield', 1995);
+
+INSERT INTO childrens_books (
+title, author, year_published)
+VALUES ('Inside Tornadoes', 'Mary Kay Carson', 2010);
+
+INSERT INTO childrens_books (
+title, author, year_published)
+VALUES ('Lola Plants a Garden', 'Anna McQuinn', '2014')
+
+INSERT INTO childrens_books (
+title, author, year_published)
+VALUES ('Stargazers', 'Gail Gibbons', 1992);
+
+INSERT INTO childrens_books (
+title, author, year_published)
+VALUES ('Thunder Cake', 'Patricia Polacco', 1990);
+
+INSERT INTO childrens_books (
+title, author, year_published)
+VALUES ('The Skeleton Book', 'DK US', 2016);
+
+
+
+#Organized by newest to oldest books
+SELECT * FROM childrens_books
+ORDER BY year_published DESC;
+
+#Organize alphabetically by title
+SELECT * FROM childrens_books
+ORDER BY title DESC;
+
+#organize alphabetically by author
+SELECT * FROM childrens_books
+ORDER BY author DESC;
+
+#Pull all books published after 2000
+SELECT * FROM childrens_books
+WHERE year_published > 2000;
+
+#pull all books whose author's name begins with A
+SELECT * FROM childrens_books
+WHERE author = 'A%';
+
+#add genre to the table
+ALTER TABLE childrens_books
+ADD genre TEXT;
+
+UPDATE childrens_books
+SET genre = 'Halloween'
+WHERE title = 'Two Little Witches', AND 'Spooky Hour', AND 'Ten Timid Ghosts', AND 'Creepy Carrots', AND 'The Teeny Tiny Ghost';
+
+UPDATE childrens_books
+SET genre = 'Science'
+WHERE title = 'The Skeleton Book', AND 'Stargazers', AND 'Lola Plants a Garden', AND 'Inside Tornadoes', AND '1000 Facts about the Earth', AND 'Why does it rain?', AND 'Explore and Learn: Earth and Space';
+
+UPDATE childrens_books
+SET genre = "Multicultural"
+WHERE title = 'Santiago Stays', AND 'The Day you Begin', AND 'A bike like Sergio', AND 'Yoko', AND 'Sadako's Cranes', AND 'Tomas and the Library Lady', AND 'Last stop on market street';
+
+UPDATE childrens_books
+SET genre = 'Other'
+WHERE genre == NULL;
